@@ -1,0 +1,33 @@
+version: '3'
+services:
+  spark-master:
+    image: bitnami/spark:3.5.1
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+
+  spark-worker:
+    image: bitnami/spark:3.5.1
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_CORES=4
+      - SPARK_WORKER_MEMORY=1g
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+
+  spark-submit:
+    image: bitnami/spark:3.5.1
+    container_name: spark-submit
+    depends_on:
+      - spark-master
+      - spark-worker
+    entrypoint: [ "tail", "-f", "/dev/null" ]
+    volumes:
+      - ./your-application-code:/app
