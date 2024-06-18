@@ -24,6 +24,22 @@ services:
     ports:
       - "8081:8081"
 
+  db:
+    image: postgres:14
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      
+volumes:
+  db-data:
+
+
   # spark-submit:
   #   image: bitnami/spark:3.5.1
   #   container_name: spark-submit
@@ -33,3 +49,5 @@ services:
   #   entrypoint: [ "tail", "-f", "/dev/null" ]
   #   volumes:
   #     - ./app:/app
+
+    
