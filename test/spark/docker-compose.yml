@@ -3,6 +3,7 @@ services:
   spark-master:
     image: bitnami/spark:3.5.1
     container_name: spark-master
+    hostname: spark-master
     environment:
       - SPARK_MODE=master
     ports:
@@ -12,6 +13,7 @@ services:
   spark-worker:
     image: bitnami/spark:3.5.1
     container_name: spark-worker
+    
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
@@ -22,12 +24,12 @@ services:
     ports:
       - "8081:8081"
 
-  spark-submit:
-    image: bitnami/spark:3.5.1
-    container_name: spark-submit
-    depends_on:
-      - spark-master
-      - spark-worker
-    entrypoint: [ "tail", "-f", "/dev/null" ]
-    volumes:
-      - ./your-application-code:/app
+  # spark-submit:
+  #   image: bitnami/spark:3.5.1
+  #   container_name: spark-submit
+  #   depends_on:
+  #     - spark-master
+  #     - spark-worker
+  #   entrypoint: [ "tail", "-f", "/dev/null" ]
+  #   volumes:
+  #     - ./app:/app
