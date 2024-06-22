@@ -16,4 +16,4 @@ apache-airflow-providers-sqlite
 apache-airflow-providers-postgres
 setuptools 
 wheel
-apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh]
+apache-airflow[crypto, celery, postgres, hive, jdbc, mysql, ssh]
