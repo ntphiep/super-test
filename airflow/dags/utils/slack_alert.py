@@ -1,9 +1,9 @@
-from airflow.hooks.base_hook import BaseHook
-from airflow.contrib.operators.slack_webhook_operator import SlackWebhookOperator
+from airflow.hooks.base import BaseHook
+from airflow.providers.slack.operators.slack_webhook import SlackWebhookOperator
 
 SLACK_CONN_ID = 'slack'
 
-url = "https://hooks.slack.com/services/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"
+# url = "https://hooks.slack.com/services/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"
 
 
 def task_fail_slack_alert(context):
