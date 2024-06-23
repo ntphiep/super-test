@@ -9,14 +9,14 @@ kafka_python
 sqlalchemy
 apache-airflow
 apache-airflow-providers-apache-spark
-apache-airflow-providers-common-sql
 apache-airflow-providers-ftp
 apache-airflow-providers-http
-apache-airflow-providers-imap
-apache-airflow-providers-sqlite
+# apache-airflow-providers-imap
+# apache-airflow-providers-sqlite
 apache-airflow-providers-postgres
 setuptools 
 wheel
 apache-airflow[crypto, celery, postgres, hive, jdbc, mysql, ssh]
 apache-beam[gcp]
 apache-airflow-providers-google
+apache-airflow-providers-amazon
