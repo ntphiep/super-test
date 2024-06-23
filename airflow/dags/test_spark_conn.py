@@ -45,7 +45,7 @@ start = EmptyOperator(
 
 date_bash_job = BashOperator(
     task_id="date_bash_job",
-    bash_command="date > /opt/airflow/dags/utils/date.txt",
+    bash_command="date > /opt/airflow/dags/utilss/date.txt",
     dag=dag
 )
 

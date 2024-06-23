@@ -29,23 +29,27 @@ start = PythonOperator(
 
 python_job = SparkSubmitOperator(
     task_id="python_job",
-    conn_id="spark-conn",
+    conn_id="spark_conn",
     application="/opt/airflow/dags/app/python/wordcountjob.py",
+    verbose=1,
+    name="PythonWordCount",
     dag=dag
 )
 
 scala_job = SparkSubmitOperator(
     task_id="scala_job",
-    conn_id="spark-conn",
+    conn_id="spark_conn",
     application="/opt/airflow/dags/app/scala/target/scala-2.12/word-count_2.12-0.1.jar",
+    verbose=1,
     dag=dag
 )
 
 java_job = SparkSubmitOperator(
     task_id="java_job",
-    conn_id="spark-conn",
+    conn_id="spark_conn",
     application="/opt/airflow/dags/app/java/spark-job/target/spark-job-1.0-SNAPSHOT.jar",
     java_class="com.airscholar.spark.WordCountJob",
+    verbose=1,
     dag=dag
 )
 

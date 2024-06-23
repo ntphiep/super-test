@@ -3,7 +3,7 @@ from airflow.providers.slack.operators.slack_webhook import SlackWebhookOperator
 
 SLACK_CONN_ID = 'slack'
 
-# url = "https://hooks.slack.com/services/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"
+# url = "https://hooks.slack.com/services/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"
 
 
 def task_fail_slack_alert(context):
@@ -26,8 +26,8 @@ def task_fail_slack_alert(context):
     
     failed_alert = SlackWebhookOperator(
         task_id='slack_alert',
-        http_conn_id=SLACK_CONN_ID,
-        webhook_token=slack_webhook_token,
+        slack_webhook_conn_id=SLACK_CONN_ID,
         message=slack_msg,
         username='airflow')
+    
     return failed_alert.execute(context=context)
