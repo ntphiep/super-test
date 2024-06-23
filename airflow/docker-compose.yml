@@ -17,13 +17,14 @@ services:
       - ./dags:/opt/airflow/dags
       - ./script/entrypoint.sh:/opt/airflow/script/entrypoint.sh
       - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./folder:/opt/airflow/dags/folder
     ports:
       - "8080:8080"
     healthcheck:
       test: ['CMD-SHELL', "[ -f /opt/airflow/airflow-webserver.pid ]"]
       interval: 30s
       timeout: 30s
-      retries: 3
+      retries: 2
     networks:
       - mynet
 
@@ -38,7 +39,8 @@ services:
       - ./dags:/opt/airflow/dags
       - ./script/entrypoint.sh:/opt/airflow/script/entrypoint.sh
       - ./requirements.txt:/opt/airflow/requirements.txt
-    command: bash -c "pip install -r ./requirements.txt && airflow db upgrade && airflow scheduler"
+      - ./folder:/opt/airflow/dags/folder
+    command: bash -c "airflow scheduler"
     networks:
       - mynet
 

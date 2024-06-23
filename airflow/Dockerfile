@@ -3,7 +3,7 @@ FROM apache/airflow:2.8.3-python3.11
 USER root
 
 RUN apt-get update && \
-    apt-get install -y gcc python3-dev openjdk-17-jre-headless nano ping jps && \
+    apt-get install -y gcc python3-dev openjdk-17-jre-headless nano iputils-ping && \
     apt-get clean
 
 
@@ -13,7 +13,7 @@ ENV AIRFLOW__DATABASE__SQL_ALCHEMY_CONN postgresql+psycopg2://airflow:airflow@po
 # ENV AIRFLOW_WEBSERVER_SECRET_KEY this_is_a_very_secured_key
 ENV AIRFLOW__CORE__TEST_CONNECTION Enabled
 ENV AIRFLOW__CORE__EXECUTOR LocalExecutor
-
+ENV AIRFLOW__CORE__LOAD_EXAMPLES False
 
 
 USER airflow
