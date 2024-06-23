@@ -3,7 +3,7 @@ from airflow.decorators import dag, task
 from airflow.operators.empty import EmptyOperator
 # from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 # import os
 from utils.slack_alert import task_fail_slack_alert
@@ -25,7 +25,7 @@ default_args = {
     "start_date": datetime(now.year, now.month, now.day),
     "email": ["ng.hiep0822@gmail.com"],
     "email_on_failure": True,
-    "email_on_retry": True,
+    "email_on_retry":  False,
     "retries": 1,
     "retry_delay": timedelta(seconds=10),
     "on_failure_callback": task_fail_slack_alert,
@@ -45,7 +45,7 @@ start = EmptyOperator(
 
 date_bash_job = BashOperator(
     task_id="date_bash_job",
-    bash_command="date > /opt/airflow/dags/utils/python/date.txt",
+    bash_command="date > /opt/airflow/dags/utils/date.txt",
     dag=dag
 )
 

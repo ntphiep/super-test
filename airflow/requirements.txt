@@ -4,17 +4,14 @@ sendgrid
 pymongo
 pyspark
 apache-airflow-providers-common-sql
-slack_sdk
-kafka_python
-sqlalchemy
-apache-airflow
 apache-airflow-providers-apache-spark
 apache-airflow-providers-apache-kafka
 apache-airflow-providers-ftp
 apache-airflow-providers-http
-# apache-airflow-providers-imap
-# apache-airflow-providers-sqlite
 apache-airflow-providers-postgres
+slack_sdk
+kafka_python
+sqlalchemy
 setuptools 
 wheel
 apache-airflow[crypto, celery, postgres, hive, jdbc, mysql, ssh]
