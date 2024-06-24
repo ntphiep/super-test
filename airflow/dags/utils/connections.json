@@ -1,1 +1,592 @@
-[{"conn_id": "airflow_db", "conn_type": "mysql", "host": "mysql", "schema": "airflow", "login": "root", "password": null, "port": null, "extra": null}, {"conn_id": "athena_default", "conn_type": "athena", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "aws_default", "conn_type": "aws", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "azure_batch_default", "conn_type": "azure_batch", "host": null, "schema": null, "login": "<ACCOUNT_NAME>", "password": null, "port": null, "extra": "{\"account_url\": \"<ACCOUNT_URL>\"}"}, {"conn_id": "azure_cosmos_default", "conn_type": "azure_cosmos", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"database_name\": \"<DATABASE_NAME>\", \"collection_name\": \"<COLLECTION_NAME>\" }"}, {"conn_id": "azure_data_explorer_default", "conn_type": "azure_data_explorer", "host": "https://<CLUSTER>.kusto.windows.net", "schema": null, "login": null, "password": null, "port": null, "extra": "{\"auth_method\": \"<AAD_APP | AAD_APP_CERT | AAD_CREDS | AAD_DEVICE>\",\n                    \"tenant\": \"<TENANT ID>\", \"certificate\": \"<APPLICATION PEM CERTIFICATE>\",\n                    \"thumbprint\": \"<APPLICATION CERTIFICATE THUMBPRINT>\"}"}, {"conn_id": "azure_data_lake_default", "conn_type": "azure_data_lake", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"tenant\": \"<TENANT>\", \"account_name\": \"<ACCOUNTNAME>\" }"}, {"conn_id": "azure_default", "conn_type": "azure", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "cassandra_default", "conn_type": "cassandra", "host": "cassandra", "schema": null, "login": null, "password": null, "port": 9042, "extra": null}, {"conn_id": "databricks_default", "conn_type": "databricks", "host": "localhost", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "dingding_default", "conn_type": "http", "host": "", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "drill_default", "conn_type": "drill", "host": "localhost", "schema": null, "login": null, "password": null, "port": 8047, "extra": "{\"dialect_driver\": \"drill+sadrill\", \"storage_plugin\": \"dfs\"}"}, {"conn_id": "druid_broker_default", "conn_type": "druid", "host": "druid-broker", "schema": null, "login": null, "password": null, "port": 8082, "extra": "{\"endpoint\": \"druid/v2/sql\"}"}, {"conn_id": "druid_ingest_default", "conn_type": "druid", "host": "druid-overlord", "schema": null, "login": null, "password": null, "port": 8081, "extra": "{\"endpoint\": \"druid/indexer/v1/task\"}"}, {"conn_id": "elasticsearch_default", "conn_type": "elasticsearch", "host": "localhost", "schema": "http", "login": null, "password": null, "port": 9200, "extra": null}, {"conn_id": "emr_default", "conn_type": "emr", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "\n                {   \"Name\": \"default_job_flow_name\",\n                    \"LogUri\": \"s3://my-emr-log-bucket/default_job_flow_location\",\n                    \"ReleaseLabel\": \"emr-4.6.0\",\n                    \"Instances\": {\n                        \"Ec2KeyName\": \"mykey\",\n                        \"Ec2SubnetId\": \"somesubnet\",\n                        \"InstanceGroups\": [\n                            {\n                                \"Name\": \"Master nodes\",\n                                \"Market\": \"ON_DEMAND\",\n                                \"InstanceRole\": \"MASTER\",\n                                \"InstanceType\": \"r3.2xlarge\",\n                                \"InstanceCount\": 1\n                            },\n                            {\n                                \"Name\": \"Core nodes\",\n                                \"Market\": \"ON_DEMAND\",\n                                \"InstanceRole\": \"CORE\",\n                                \"InstanceType\": \"r3.2xlarge\",\n                                \"InstanceCount\": 1\n                            }\n                        ],\n                        \"TerminationProtected\": false,\n                        \"KeepJobFlowAliveWhenNoSteps\": false\n                    },\n                    \"Applications\":[\n                        { \"Name\": \"Spark\" }\n                    ],\n                    \"VisibleToAllUsers\": true,\n                    \"JobFlowRole\": \"EMR_EC2_DefaultRole\",\n                    \"ServiceRole\": \"EMR_DefaultRole\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"app\",\n                            \"Value\": \"analytics\"\n                        },\n                        {\n                            \"Key\": \"environment\",\n                            \"Value\": \"development\"\n                        }\n                    ]\n                }\n            "}, {"conn_id": "facebook_default", "conn_type": "facebook_social", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "\n                {   \"account_id\": \"<AD_ACCOUNT_ID>\",\n                    \"app_id\": \"<FACEBOOK_APP_ID>\",\n                    \"app_secret\": \"<FACEBOOK_APP_SECRET>\",\n                    \"access_token\": \"<FACEBOOK_AD_ACCESS_TOKEN>\"\n                }\n            "}, {"conn_id": "fs_default", "conn_type": "fs", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"path\": \"/\"}"}, {"conn_id": "ftp_default", "conn_type": "ftp", "host": "localhost", "schema": null, "login": "airflow", "password": "airflow", "port": 21, "extra": "{\"key_file\": \"~/.ssh/id_rsa\", \"no_host_key_check\": true}"}, {"conn_id": "google_cloud_default", "conn_type": "google_cloud_platform", "host": null, "schema": "default", "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "hive_cli_default", "conn_type": "hive_cli", "host": "localhost", "schema": "default", "login": null, "password": null, "port": 10000, "extra": "{\"use_beeline\": true, \"auth\": \"\"}"}, {"conn_id": "hiveserver2_default", "conn_type": "hiveserver2", "host": "localhost", "schema": "default", "login": null, "password": null, "port": 10000, "extra": null}, {"conn_id": "http_default", "conn_type": "http", "host": "https://www.httpbin.org/", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "impala_default", "conn_type": "impala", "host": "localhost", "schema": null, "login": null, "password": null, "port": 21050, "extra": null}, {"conn_id": "kafka_default", "conn_type": "kafka", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"bootstrap.servers\": \"broker:29092\"}"}, {"conn_id": "kubernetes_default", "conn_type": "kubernetes", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "kylin_default", "conn_type": "kylin", "host": "localhost", "schema": null, "login": "ADMIN", "password": "KYLIN", "port": 7070, "extra": null}, {"conn_id": "leveldb_default", "conn_type": "leveldb", "host": "localhost", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "livy_default", "conn_type": "livy", "host": "livy", "schema": null, "login": null, "password": null, "port": 8998, "extra": null}, {"conn_id": "local_mysql", "conn_type": "mysql", "host": "localhost", "schema": "airflow", "login": "airflow", "password": "airflow", "port": null, "extra": null}, {"conn_id": "metastore_default", "conn_type": "hive_metastore", "host": "localhost", "schema": null, "login": null, "password": null, "port": 9083, "extra": "{\"authMechanism\": \"PLAIN\"}"}, {"conn_id": "mongo_default", "conn_type": "mongo", "host": "mongo", "schema": null, "login": null, "password": null, "port": 27017, "extra": null}, {"conn_id": "mssql_default", "conn_type": "mssql", "host": "localhost", "schema": null, "login": null, "password": null, "port": 1433, "extra": null}, {"conn_id": "mysql_default", "conn_type": "mysql", "host": "mysql", "schema": "airflow", "login": "root", "password": null, "port": null, "extra": null}, {"conn_id": "opsgenie_default", "conn_type": "http", "host": "", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "oracle_default", "conn_type": "oracle", "host": "localhost", "schema": "schema", "login": "root", "password": "password", "port": 1521, "extra": null}, {"conn_id": "oss_default", "conn_type": "oss", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\n                \"auth_type\": \"AK\",\n                \"access_key_id\": \"<ACCESS_KEY_ID>\",\n                \"access_key_secret\": \"<ACCESS_KEY_SECRET>\",\n                \"region\": \"<YOUR_OSS_REGION>\"}\n                "}, {"conn_id": "pig_cli_default", "conn_type": "pig_cli", "host": null, "schema": "default", "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "pinot_admin_default", "conn_type": "pinot", "host": "localhost", "schema": null, "login": null, "password": null, "port": 9000, "extra": null}, {"conn_id": "pinot_broker_default", "conn_type": "pinot", "host": "localhost", "schema": null, "login": null, "password": null, "port": 9000, "extra": "{\"endpoint\": \"/query\", \"schema\": \"http\"}"}, {"conn_id": "postgres_default", "conn_type": "postgres", "host": "postgres", "schema": "airflow", "login": "postgres", "password": "airflow", "port": null, "extra": null}, {"conn_id": "presto_default", "conn_type": "presto", "host": "localhost", "schema": "hive", "login": null, "password": null, "port": 3400, "extra": null}, {"conn_id": "redis_default", "conn_type": "redis", "host": "redis", "schema": null, "login": null, "password": null, "port": 6379, "extra": "{\"db\": 0}"}, {"conn_id": "redshift_default", "conn_type": "redshift", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\n    \"iam\": true,\n    \"cluster_identifier\": \"<REDSHIFT_CLUSTER_IDENTIFIER>\",\n    \"port\": 5439,\n    \"profile\": \"default\",\n    \"db_user\": \"awsuser\",\n    \"database\": \"dev\",\n    \"region\": \"\"\n}"}, {"conn_id": "salesforce_default", "conn_type": "salesforce", "host": null, "schema": null, "login": "username", "password": "password", "port": null, "extra": "{\"security_token\": \"security_token\"}"}, {"conn_id": "segment_default", "conn_type": "segment", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"write_key\": \"my-segment-write-key\"}"}, {"conn_id": "sftp_default", "conn_type": "sftp", "host": "localhost", "schema": null, "login": "airflow", "password": null, "port": 22, "extra": "{\"key_file\": \"~/.ssh/id_rsa\", \"no_host_key_check\": true}"}, {"conn_id": "sqlite_default", "conn_type": "sqlite", "host": "/tmp/sqlite_default.db", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "sqoop_default", "conn_type": "sqoop", "host": "rdbms", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "ssh_default", "conn_type": "ssh", "host": "localhost", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "tableau_default", "conn_type": "tableau", "host": "https://tableau.server.url", "schema": null, "login": "user", "password": "password", "port": null, "extra": "{\"site_id\": \"my_site\"}"}, {"conn_id": "tabular_default", "conn_type": "tabular", "host": "https://api.tabulardata.io/ws/v1", "schema": null, "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "trino_default", "conn_type": "trino", "host": "localhost", "schema": "hive", "login": null, "password": null, "port": 3400, "extra": null}, {"conn_id": "vertica_default", "conn_type": "vertica", "host": "localhost", "schema": null, "login": null, "password": null, "port": 5433, "extra": null}, {"conn_id": "wasb_default", "conn_type": "wasb", "host": null, "schema": null, "login": null, "password": null, "port": null, "extra": "{\"sas_token\": null}"}, {"conn_id": "webhdfs_default", "conn_type": "hdfs", "host": "localhost", "schema": null, "login": null, "password": null, "port": 50070, "extra": null}, {"conn_id": "yandexcloud_default", "conn_type": "yandexcloud", "host": null, "schema": "default", "login": null, "password": null, "port": null, "extra": null}, {"conn_id": "spark_conn", "conn_type": "spark", "host": "spark://spark-master", "schema": "", "login": "", "password": null, "port": 7077, "extra": "{\"queue\": \"root.default\", \"deploy-mode\": \"client\", \"spark-binary\": \"spark-submit\"}"}, {"conn_id": "slack", "conn_type": "slackwebhook", "host": "hooks.slack.com/services", "schema": "https", "login": "admin", "password": "T067SNBPJCA/B079KV55BDX/81ra2wBw5CLNSusvrP9TrQPj", "port": null, "extra": "{\"timeout\": null}"}]
+[
+    {
+        "conn_id": "airflow_db",
+        "conn_type": "mysql",
+        "host": "mysql",
+        "schema": "airflow",
+        "login": "root",
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "athena_default",
+        "conn_type": "athena",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "aws_default",
+        "conn_type": "aws",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "azure_batch_default",
+        "conn_type": "azure_batch",
+        "host": null,
+        "schema": null,
+        "login": "<ACCOUNT_NAME>",
+        "password": null,
+        "port": null,
+        "extra": "{\"account_url\": \"<ACCOUNT_URL>\"}"
+    },
+    {
+        "conn_id": "azure_cosmos_default",
+        "conn_type": "azure_cosmos",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"database_name\": \"<DATABASE_NAME>\", \"collection_name\": \"<COLLECTION_NAME>\" }"
+    },
+    {
+        "conn_id": "azure_data_explorer_default",
+        "conn_type": "azure_data_explorer",
+        "host": "https://<CLUSTER>.kusto.windows.net",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"auth_method\": \"<AAD_APP | AAD_APP_CERT | AAD_CREDS | AAD_DEVICE>\",\n                    \"tenant\": \"<TENANT ID>\", \"certificate\": \"<APPLICATION PEM CERTIFICATE>\",\n                    \"thumbprint\": \"<APPLICATION CERTIFICATE THUMBPRINT>\"}"
+    },
+    {
+        "conn_id": "azure_data_lake_default",
+        "conn_type": "azure_data_lake",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"tenant\": \"<TENANT>\", \"account_name\": \"<ACCOUNTNAME>\" }"
+    },
+    {
+        "conn_id": "azure_default",
+        "conn_type": "azure",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "cassandra_default",
+        "conn_type": "cassandra",
+        "host": "cassandra",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 9042,
+        "extra": null
+    },
+    {
+        "conn_id": "databricks_default",
+        "conn_type": "databricks",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "dingding_default",
+        "conn_type": "http",
+        "host": "",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "drill_default",
+        "conn_type": "drill",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 8047,
+        "extra": "{\"dialect_driver\": \"drill+sadrill\", \"storage_plugin\": \"dfs\"}"
+    },
+    {
+        "conn_id": "druid_broker_default",
+        "conn_type": "druid",
+        "host": "druid-broker",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 8082,
+        "extra": "{\"endpoint\": \"druid/v2/sql\"}"
+    },
+    {
+        "conn_id": "druid_ingest_default",
+        "conn_type": "druid",
+        "host": "druid-overlord",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 8081,
+        "extra": "{\"endpoint\": \"druid/indexer/v1/task\"}"
+    },
+    {
+        "conn_id": "elasticsearch_default",
+        "conn_type": "elasticsearch",
+        "host": "localhost",
+        "schema": "http",
+        "login": null,
+        "password": null,
+        "port": 9200,
+        "extra": null
+    },
+    {
+        "conn_id": "emr_default",
+        "conn_type": "emr",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "\n                {   \"Name\": \"default_job_flow_name\",\n                    \"LogUri\": \"s3://my-emr-log-bucket/default_job_flow_location\",\n                    \"ReleaseLabel\": \"emr-4.6.0\",\n                    \"Instances\": {\n                        \"Ec2KeyName\": \"mykey\",\n                        \"Ec2SubnetId\": \"somesubnet\",\n                        \"InstanceGroups\": [\n                            {\n                                \"Name\": \"Master nodes\",\n                                \"Market\": \"ON_DEMAND\",\n                                \"InstanceRole\": \"MASTER\",\n                                \"InstanceType\": \"r3.2xlarge\",\n                                \"InstanceCount\": 1\n                            },\n                            {\n                                \"Name\": \"Core nodes\",\n                                \"Market\": \"ON_DEMAND\",\n                                \"InstanceRole\": \"CORE\",\n                                \"InstanceType\": \"r3.2xlarge\",\n                                \"InstanceCount\": 1\n                            }\n                        ],\n                        \"TerminationProtected\": false,\n                        \"KeepJobFlowAliveWhenNoSteps\": false\n                    },\n                    \"Applications\":[\n                        { \"Name\": \"Spark\" }\n                    ],\n                    \"VisibleToAllUsers\": true,\n                    \"JobFlowRole\": \"EMR_EC2_DefaultRole\",\n                    \"ServiceRole\": \"EMR_DefaultRole\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"app\",\n                            \"Value\": \"analytics\"\n                        },\n                        {\n                            \"Key\": \"environment\",\n                            \"Value\": \"development\"\n                        }\n                    ]\n                }\n            "
+    },
+    {
+        "conn_id": "facebook_default",
+        "conn_type": "facebook_social",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "\n                {   \"account_id\": \"<AD_ACCOUNT_ID>\",\n                    \"app_id\": \"<FACEBOOK_APP_ID>\",\n                    \"app_secret\": \"<FACEBOOK_APP_SECRET>\",\n                    \"access_token\": \"<FACEBOOK_AD_ACCESS_TOKEN>\"\n                }\n            "
+    },
+    {
+        "conn_id": "fs_default",
+        "conn_type": "fs",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"path\": \"/\"}"
+    },
+    {
+        "conn_id": "ftp_default",
+        "conn_type": "ftp",
+        "host": "localhost",
+        "schema": null,
+        "login": "airflow",
+        "password": "airflow",
+        "port": 21,
+        "extra": "{\"key_file\": \"~/.ssh/id_rsa\", \"no_host_key_check\": true}"
+    },
+    {
+        "conn_id": "google_cloud_default",
+        "conn_type": "google_cloud_platform",
+        "host": null,
+        "schema": "default",
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "hive_cli_default",
+        "conn_type": "hive_cli",
+        "host": "localhost",
+        "schema": "default",
+        "login": null,
+        "password": null,
+        "port": 10000,
+        "extra": "{\"use_beeline\": true, \"auth\": \"\"}"
+    },
+    {
+        "conn_id": "hiveserver2_default",
+        "conn_type": "hiveserver2",
+        "host": "localhost",
+        "schema": "default",
+        "login": null,
+        "password": null,
+        "port": 10000,
+        "extra": null
+    },
+    {
+        "conn_id": "http_default",
+        "conn_type": "http",
+        "host": "https://www.httpbin.org/",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "impala_default",
+        "conn_type": "impala",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 21050,
+        "extra": null
+    },
+    {
+        "conn_id": "kafka_default",
+        "conn_type": "kafka",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"bootstrap.servers\": \"broker:29092\"}"
+    },
+    {
+        "conn_id": "kubernetes_default",
+        "conn_type": "kubernetes",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "kylin_default",
+        "conn_type": "kylin",
+        "host": "localhost",
+        "schema": null,
+        "login": "ADMIN",
+        "password": "KYLIN",
+        "port": 7070,
+        "extra": null
+    },
+    {
+        "conn_id": "leveldb_default",
+        "conn_type": "leveldb",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "livy_default",
+        "conn_type": "livy",
+        "host": "livy",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 8998,
+        "extra": null
+    },
+    {
+        "conn_id": "local_mysql",
+        "conn_type": "mysql",
+        "host": "localhost",
+        "schema": "airflow",
+        "login": "airflow",
+        "password": "airflow",
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "metastore_default",
+        "conn_type": "hive_metastore",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 9083,
+        "extra": "{\"authMechanism\": \"PLAIN\"}"
+    },
+    {
+        "conn_id": "mongo_default",
+        "conn_type": "mongo",
+        "host": "mongo",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 27017,
+        "extra": null
+    },
+    {
+        "conn_id": "mssql_default",
+        "conn_type": "mssql",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 1433,
+        "extra": null
+    },
+    {
+        "conn_id": "mysql_default",
+        "conn_type": "mysql",
+        "host": "mysql",
+        "schema": "airflow",
+        "login": "root",
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "opsgenie_default",
+        "conn_type": "http",
+        "host": "",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "oracle_default",
+        "conn_type": "oracle",
+        "host": "localhost",
+        "schema": "schema",
+        "login": "root",
+        "password": "password",
+        "port": 1521,
+        "extra": null
+    },
+    {
+        "conn_id": "oss_default",
+        "conn_type": "oss",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\n                \"auth_type\": \"AK\",\n                \"access_key_id\": \"<ACCESS_KEY_ID>\",\n                \"access_key_secret\": \"<ACCESS_KEY_SECRET>\",\n                \"region\": \"<YOUR_OSS_REGION>\"}\n                "
+    },
+    {
+        "conn_id": "pig_cli_default",
+        "conn_type": "pig_cli",
+        "host": null,
+        "schema": "default",
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "pinot_admin_default",
+        "conn_type": "pinot",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 9000,
+        "extra": null
+    },
+    {
+        "conn_id": "pinot_broker_default",
+        "conn_type": "pinot",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 9000,
+        "extra": "{\"endpoint\": \"/query\", \"schema\": \"http\"}"
+    },
+    {
+        "conn_id": "postgres_default",
+        "conn_type": "postgres",
+        "host": "postgres",
+        "schema": "airflow",
+        "login": "postgres",
+        "password": "airflow",
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "presto_default",
+        "conn_type": "presto",
+        "host": "localhost",
+        "schema": "hive",
+        "login": null,
+        "password": null,
+        "port": 3400,
+        "extra": null
+    },
+    {
+        "conn_id": "redis_default",
+        "conn_type": "redis",
+        "host": "redis",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 6379,
+        "extra": "{\"db\": 0}"
+    },
+    {
+        "conn_id": "redshift_default",
+        "conn_type": "redshift",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\n    \"iam\": true,\n    \"cluster_identifier\": \"<REDSHIFT_CLUSTER_IDENTIFIER>\",\n    \"port\": 5439,\n    \"profile\": \"default\",\n    \"db_user\": \"awsuser\",\n    \"database\": \"dev\",\n    \"region\": \"\"\n}"
+    },
+    {
+        "conn_id": "salesforce_default",
+        "conn_type": "salesforce",
+        "host": null,
+        "schema": null,
+        "login": "username",
+        "password": "password",
+        "port": null,
+        "extra": "{\"security_token\": \"security_token\"}"
+    },
+    {
+        "conn_id": "segment_default",
+        "conn_type": "segment",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"write_key\": \"my-segment-write-key\"}"
+    },
+    {
+        "conn_id": "sftp_default",
+        "conn_type": "sftp",
+        "host": "localhost",
+        "schema": null,
+        "login": "airflow",
+        "password": null,
+        "port": 22,
+        "extra": "{\"key_file\": \"~/.ssh/id_rsa\", \"no_host_key_check\": true}"
+    },
+    {
+        "conn_id": "sqlite_default",
+        "conn_type": "sqlite",
+        "host": "/tmp/sqlite_default.db",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "sqoop_default",
+        "conn_type": "sqoop",
+        "host": "rdbms",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "ssh_default",
+        "conn_type": "ssh",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "tableau_default",
+        "conn_type": "tableau",
+        "host": "https://tableau.server.url",
+        "schema": null,
+        "login": "user",
+        "password": "password",
+        "port": null,
+        "extra": "{\"site_id\": \"my_site\"}"
+    },
+    {
+        "conn_id": "tabular_default",
+        "conn_type": "tabular",
+        "host": "https://api.tabulardata.io/ws/v1",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "trino_default",
+        "conn_type": "trino",
+        "host": "localhost",
+        "schema": "hive",
+        "login": null,
+        "password": null,
+        "port": 3400,
+        "extra": null
+    },
+    {
+        "conn_id": "vertica_default",
+        "conn_type": "vertica",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 5433,
+        "extra": null
+    },
+    {
+        "conn_id": "wasb_default",
+        "conn_type": "wasb",
+        "host": null,
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": "{\"sas_token\": null}"
+    },
+    {
+        "conn_id": "webhdfs_default",
+        "conn_type": "hdfs",
+        "host": "localhost",
+        "schema": null,
+        "login": null,
+        "password": null,
+        "port": 50070,
+        "extra": null
+    },
+    {
+        "conn_id": "yandexcloud_default",
+        "conn_type": "yandexcloud",
+        "host": null,
+        "schema": "default",
+        "login": null,
+        "password": null,
+        "port": null,
+        "extra": null
+    },
+    {
+        "conn_id": "spark_conn",
+        "conn_type": "spark",
+        "host": "spark://spark-master",
+        "schema": "",
+        "login": "",
+        "password": null,
+        "port": 7077,
+        "extra": "{\"queue\": \"root.default\", \"deploy-mode\": \"client\", \"spark-binary\": \"spark-submit\"}"
+    },
+    {
+        "conn_id": "slack",
+        "conn_type": "slackwebhook",
+        "host": "hooks.slack.com/services",
+        "schema": "https",
+        "login": "admin",
+        "password": "T067SNBPJCA/B079KV55BDX/81ra2wBw5CLNSusvrP9TrQPj",
+        "port": null,
+        "extra": "{\"timeout\": null}"
+    }
+]

@@ -19,4 +19,5 @@ for conn in conns:
     })
 
 with open('/opt/airflow/dags/utils/connections.json', 'w') as f:
-    json.dump(conns_list, f)
+    # conns_list = json.
+    json.dump(conns_list, indent=4, fp=f)

@@ -6,8 +6,6 @@ import time
 import sys
 from airflow import DAG
 import pandas as pd
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, LSTM, Dropout
 from airflow.operators.python import PythonOperator
 import numpy as np
 import ssl
@@ -50,6 +48,9 @@ def craw_stock_price(**kwargs):
 
 
 def train_model():
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Dense, LSTM, Dropout
+    
     # Doc du lieu VCB 2009->2018
     dataset_train = pd.read_csv('/home/thangnc/stock_data/stock_price.csv')
     training_set = dataset_train.iloc[:, 5:6].values

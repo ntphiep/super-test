@@ -7,12 +7,12 @@ from airflow.operators.python import BranchPythonOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.providers.slack.operators.slack_webhook import SlackWebhookOperator
 
-from check_mongodb import check_mongodb_main
-from kafka_producer import kafka_producer_main
-from check_cassandra import check_cassandra_main
-from kafka_create_topic import kafka_create_topic_main
-from kafka_consumer_mongodb import kafka_consumer_mongodb_main
-from kafka_consumer_cassandra import kafka_consumer_cassandra_main
+# from check_mongodb import check_mongodb_main
+# from kafka_producer import kafka_producer_main
+# from check_cassandra import check_cassandra_main
+# from kafka_create_topic import kafka_create_topic_main
+# from kafka_consumer_mongodb import kafka_consumer_mongodb_main
+# from kafka_consumer_cassandra import kafka_consumer_cassandra_main
 
 start_date = datetime(2022, 10, 19, 12, 20)
 
