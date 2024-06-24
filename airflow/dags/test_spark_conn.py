@@ -5,6 +5,7 @@ from airflow.operators.empty import EmptyOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
+from airflow.sensors.filesystem import FileSensor
 # import os
 from utils.slack_alert import task_fail_slack_alert
 
@@ -45,7 +46,16 @@ start = EmptyOperator(
 
 date_bash_job = BashOperator(
     task_id="date_bash_job",
-    bash_command="date > /opt/airflow/dags/utilss/date.txt",
+    bash_command="date > /opt/airflow/dags/utils/date.txt",
+    dag=dag 
+)
+
+sensor = FileSensor(
+    task_id="file_sensor",
+    filepath="/opt/airflow/dags/utils/date.txt",
+    poke_interval=10,
+    timeout=300,
+    mode="poke",
     dag=dag
 )
 
@@ -64,5 +74,5 @@ end = EmptyOperator(
     trigger_rule="all_done"
 )
 
-start >> [date_bash_job, spark_job] >> end   
+start >> date_bash_job >> sensor >> spark_job >> end   
 
