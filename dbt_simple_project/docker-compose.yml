@@ -29,7 +29,6 @@ services:
     networks:
       - mynet
 
-
   spark-master:
     image: bitnami/spark:3.5.1
     command: bin/spark-class org.apache.spark.deploy.master.Master
@@ -40,7 +39,7 @@ services:
       - mynet
     volumes:
       - ./deptrai:/urs/local/spark/deptrai
-    
+      - ./libs:/urs/local/spark/libs
 
   spark-worker:
     image: bitnami/spark:3.5.1
@@ -56,10 +55,9 @@ services:
       SPARK_MASTER_URL: spark://spark-master:7077
     volumes:
       - ./deptrai:/urs/local/spark/deptrai
+      - ./libs:/urs/local/spark/libs
     networks:
       - mynet
 
-
-  
 networks:
   mynet:
