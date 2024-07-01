@@ -1,0 +1,58 @@
+[0m00:47:18.147694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863798B990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186379C9C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186379CFF50>]}
+
+
+============================== 00:47:18.149693 | 286764d3-9225-4cd4-9909-695e2bcf7e7d ==============================
+[0m00:47:18.149693 [info ] [MainThread]: Running with dbt=1.8.3
+[0m00:47:18.150693 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\DangTinh\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m00:47:22.993770 [debug] [MainThread]: Starter project path: C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\include\starter_project
+[0m00:47:23.042274 [info ] [MainThread]: 
+Your new dbt project "deptrai" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:47:23.042274 [info ] [MainThread]: Setting up your profile.
+[0m00:48:00.768183 [error] [MainThread]: Encountered an error:
+
+[0m00:48:00.770182 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\cli\main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\task\init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\task\init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\task\init.py", line 180, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\task\init.py", line 164, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\dbt\task\init.py", line 130, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\click\termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DangTinh\Desktop\super-test\dbt_simple_project\myenv\Lib\site-packages\click\termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m00:48:00.772468 [debug] [MainThread]: Command `dbt init` failed at 00:48:00.772468 after 42.68 seconds
+[0m00:48:00.773477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186310EA910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186379C9890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186379C9C50>]}
+[0m00:48:00.773477 [debug] [MainThread]: Flushing usage events
