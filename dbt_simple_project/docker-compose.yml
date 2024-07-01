@@ -1,0 +1,65 @@
+version: '3.9' 
+
+
+services:
+  # dbt:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: dbt run
+  #   volumes:
+  #     - ./dbt_simple_project:/dbt_simple_project
+  #   networks:
+  #     - mynet
+
+  postgres:
+    image: postgres:14.0
+    environment:
+      - POSTGRES_USER=dbt
+      - POSTGRES_PASSWORD=dbt
+      - POSTGRES_DB=dbt
+    ports:
+      - "5432:5432"
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - mynet
+
+
+  spark-master:
+    image: bitnami/spark:3.5.1
+    command: bin/spark-class org.apache.spark.deploy.master.Master
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+    networks:
+      - mynet
+    volumes:
+      - ./deptrai:/urs/local/spark/deptrai
+    
+
+  spark-worker:
+    image: bitnami/spark:3.5.1
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
+      SPARK_MASTER_URL: spark://spark-master:7077
+    volumes:
+      - ./deptrai:/urs/local/spark/deptrai
+    networks:
+      - mynet
+
+
+  
+networks:
+  mynet:
