@@ -25,7 +25,9 @@ services:
         max-size: 10m
         max-file: "3"
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./raw_data:/input_data
     networks:
       - mynet
 
@@ -61,3 +63,6 @@ services:
 
 networks:
   mynet:
+
+volumes:
+  pgdata:
