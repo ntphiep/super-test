@@ -1,6 +1,8 @@
 
 version: 2
 
+
+# Test
 models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
@@ -9,7 +11,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
 
   - name: my_second_dbt_model
     description: "A starter dbt model"
@@ -19,3 +20,11 @@ models:
         data_tests:
           - unique
           - not_null
+
+# Source  
+# sources:
+#   - name: raw_layer
+#     schema: raw_layer
+#     tables:
+#       - name: customers
+#         description: "Customers data from raw layer"

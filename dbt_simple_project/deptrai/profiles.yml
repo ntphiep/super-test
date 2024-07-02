@@ -1,0 +1,23 @@
+config:
+  send_anonymous_usage_stats: false
+deptrai:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 8
+      host: localhost
+      port: 5432
+      user: dbt
+      pass: dbt
+      dbname: dbt
+      schema: dev_warehouse
+    prod:
+      type: postgres
+      threads: 8
+      host: localhost
+      port: 5432
+      user: dbt
+      pass: dbt
+      dbname: dbt
+      schema: warehouse
