@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 # Tạo SparkSession
 spark = SparkSession.builder \
     .appName("PostgresSparkConnect") \
-    .config("spark.jars", "./libs/postgresql-42.2.2.jar") \
+    .config("spark.jars", "/urs/local/spark/libs/postgresql-42.2.2.jar") \
     .getOrCreate()
 
 
@@ -16,4 +16,6 @@ properties = {
 }
 
 # Đọc dữ liệu từ PostgreSQL
-df_orders = spark.read.jdbc(url=url, table="raw_layer.orders", properties=properties)
+df_orders = spark.read.jdbc(url=url, table="raw_layer.customers", properties=properties)
+
+print(df_orders.show(10))
