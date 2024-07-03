@@ -13,7 +13,7 @@ services:
   #     - mynet
 
   postgres:
-    image: postgres:14.0
+    image: postgres:16
     environment:
       - POSTGRES_USER=dbt
       - POSTGRES_PASSWORD=dbt
