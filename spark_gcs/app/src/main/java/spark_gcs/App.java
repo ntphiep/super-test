@@ -3,6 +3,12 @@
  */
 package spark_gcs;
 
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sparkContext;
+
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +16,20 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        SparkSession spark = SparkSession.builder()
+            .appName("Simple Application")
+            
+            .getOrCreate();
+
+        
+        Dataset<Row> df_order = spark.read().format("jdbc")
+            .option("url", "jdbc:mysql://localhost:3306/retail_db")
+            .option("dbtable", "orders")
+            .option("user", "root")
+            .option("password", "password")
+            .load();
+
+        df_order.show();
     }
 }

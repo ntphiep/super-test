@@ -6,16 +6,17 @@ services:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     user: root
     ports:
-      - 5533:1433
+      - 1433:1433
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_PID=Developer
-      - MSSQL_USER=SA
-      - MSSQL_SA_PASSWORD=Ubunchuu@2022
+      - MSSQL_USER=hiep
+      - MSSQL_SA_PASSWORD=Hiep@1234
     volumes:
-      - ./data:/var/opt/mssql/data
-      - ./log:/var/opt/mssql/log
-      - ./backup:/var/opt/mssql/backup
+      - data:/var/opt/mssql
+      - log:/var/opt/mssql/log
+      - backup:/var/opt/mssql/backup
+
     restart: on-failure
     healthcheck:
       test: /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$$MSSQL_SA_PASSWORD" -Q "SELECT 1" || exit
