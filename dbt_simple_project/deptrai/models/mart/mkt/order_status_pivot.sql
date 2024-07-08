@@ -1,5 +1,5 @@
 SELECT
-    EXTRACT ( YEAR FROM
+    EXTRACT (YEAR FROM
         order_approved_at
     ) AS order_year, --noqa: CV03
     {{
