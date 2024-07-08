@@ -57,6 +57,8 @@ services:
       - "-c"
       - "wal_level=logical" #required for MaterializedPostgreSQL
 
+  
+
 volumes:
   data: {}
   log: {}
