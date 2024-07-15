@@ -15,6 +15,7 @@ Final result - every 3 rows are the performance of each method: CTE -> View -> T
   - `Temp Table`: Available in the session where it is defined.
   - `Table Variable`: Available in the batch where it is defined.
 
+
 - **Performance** with the same query - about *360000* rows:
   - It seems that `Temp Table` is the fastest (about ~*400 ms*)
   - `CTE`, `View` and `TVF` have similar performance (about ~*1000 ms*)

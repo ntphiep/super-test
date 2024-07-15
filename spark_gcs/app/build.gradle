@@ -22,8 +22,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
-    implementation 'org.apache.spark:spark-core_2.12:3.2.0'
-    implementation 'org.apache.spark:spark-sql_2.12:3.2.0'
+    implementation 'org.apache.spark:spark-core_2.12:3.5.1'
+    implementation 'org.apache.spark:spark-sql_2.12:3.5.1'
+    implementation 'org.apache.hadoop:hadoop-aws:3.3.1'
+    implementation 'com.amazonaws:aws-java-sdk-bundle:1.11.901'
+    implementation 'org.apache.spark:spark-streaming-kafka-0-10_2.13:3.5.1'
+    implementation 'org.scala-lang:scala-library:2.13.14'
 }
 
 application {
