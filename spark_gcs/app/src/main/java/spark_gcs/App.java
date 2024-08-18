@@ -6,7 +6,6 @@ package spark_gcs;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sparkContext;
 
 
 public class App {
@@ -19,17 +18,13 @@ public class App {
 
         SparkSession spark = SparkSession.builder()
             .appName("Simple Application")
-            
+            .config("spark.hadoop.fs.s3a.access.key", "AKIA2S4AYDOOF7VZ3AE2")
+            .config("spark.hadoop.fs.s3a.secret.key", "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")
+            .config("spark.hadoop.fs.s3a.endpoint", "s3.amazonaws.com")
             .getOrCreate();
 
         
-        Dataset<Row> df_order = spark.read().format("jdbc")
-            .option("url", "jdbc:mysql://localhost:3306/retail_db")
-            .option("dbtable", "orders")
-            .option("user", "root")
-            .option("password", "password")
-            .load();
-
-        df_order.show();
+        Dataset<Row> df = spark.read().format("csv").option("header", "true").load("s3a://hiep-bk-1/NASDAQ_1962-2024.csv");
+        df.show();
     }
 }
